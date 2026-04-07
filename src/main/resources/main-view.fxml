@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cart.ShoppingCartController">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="MEGHA / Shopping Cart App (DB Localization)"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="10">
+                <Label text="Language:"/>
+                <ComboBox fx:id="languageComboBox"/>
+                <Button fx:id="confirmLanguageButton" text="Confirm Language"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label fx:id="numberOfItemsLabel" text="Enter number of items:"/>
+                <TextField fx:id="numberOfItemsField" promptText="Number of items"/>
+                <Button fx:id="enterItemsButton" text="Enter Items"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <VBox fx:id="itemsContainer" spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Button fx:id="calculateTotalButton" text="Calculate Total"/>
+            <Label fx:id="totalLabel" text="Total: 0"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
