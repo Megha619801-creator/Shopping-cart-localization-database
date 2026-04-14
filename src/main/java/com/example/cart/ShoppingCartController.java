@@ -93,6 +93,13 @@ public class ShoppingCartController {
         }
     }
 
+    private void showError() {
+        // Display an error alert when the user enters invalid input
+        Alert alert = new Alert(Alert.AlertType.ERROR,
+                strings.getOrDefault("error.invalidNumber", "Invalid number"));
+        alert.showAndWait();
+    }
+
     private void calculateAndSave() {
         List<Item> items = new ArrayList<>();
 
@@ -117,14 +124,12 @@ public class ShoppingCartController {
         if (cartId > 0) {
             int index = 1;
             for (Item item : items) {
-                double subtotal = item.price() * item.quantity();
-                cartService.saveCartItem(cartId, index++, item.price(), item.quantity(), subtotal);
+                double subtotal = item.getPrice() * item.getQuantity(); // ✅ Fixed
+                cartService.saveCartItem(cartId, index++, item.getPrice(), item.getQuantity(), subtotal); // ✅ Fixed
             }
+        }
         }
     }
 
-    private void showError() {
-        Alert alert = new Alert(Alert.AlertType.ERROR, strings.getOrDefault("error.invalidNumber", "Invalid number"));
-        alert.showAndWait();
-    }
-}
+   
+

@@ -10,7 +10,7 @@ public class ShoppingCartCalculator {
 
     public double calculateCartTotal(List<Item> items) {
         return items.stream()
-                .mapToDouble(i -> calculateItemTotal(i.price(), i.quantity()))
+                .mapToDouble(i -> calculateItemTotal(i.getPrice(), i.getQuantity())) // ✅ Fixed
                 .sum();
     }
 }

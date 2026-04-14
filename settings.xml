@@ -1,0 +1,13 @@
+<settings>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <properties>
+                <sonar.token>squ_cdbf7025f8ba4a53b71e43e6968a39c1c1750578</sonar.token>
+            </properties>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>sonar</activeProfile>
+    </activeProfiles>
+</settings>
